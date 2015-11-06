@@ -13,6 +13,7 @@ post '/search' do
   new_list = MovieList.new(search)
   @year = new_list.select_random_film[:year]
   @movies = new_list.movies
+  
   erb(:search)
 end
 

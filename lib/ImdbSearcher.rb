@@ -3,13 +3,14 @@ require 'imdb'
 
 class ImdbSearcher
 
-  def search_by_word(word)
+  def self.search_by_word(word)
     films = []
     film_search = Imdb::Search.new(word)
     n = 0
     while films.size < 9
       if film_search.movies[n].poster != nil
-        films << {id: n,
+        films << {
+                  id: n,
                   title: film_search.movies[n].title,
                   year: film_search.movies[n].year,
                   poster: film_search.movies[n].poster
@@ -25,7 +26,8 @@ end
 class ImdbSearcherFake
 
   def search_by_word(word)
-    [{id: 1, title: "Titulo", year: 1991, poster: "./movie.jpg"},
+    [
+     {id: 1, title: "Titulo", year: 1991, poster: "./movie.jpg"},
      {id: 2, title: "Titulo", year: 1992, poster: "./movie.jpg"},
      {id: 3, title: "Titulo", year: 1993, poster: "./movie.jpg"},
      {id: 4, title: "Titulo", year: 1994, poster: "./movie.jpg"},

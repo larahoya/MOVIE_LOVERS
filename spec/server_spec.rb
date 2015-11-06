@@ -24,11 +24,4 @@ describe 'Server Service' do
     expect(last_response).to be_ok
   end
 
-#   it "should redirect to the home page" do
-#     post '/create_post'
-#     expect(last_response.redirect?).to be(true)
-#     follow_redirect!
-#     expect(last_request.path).to eq('/')
-#   end
-
 end
