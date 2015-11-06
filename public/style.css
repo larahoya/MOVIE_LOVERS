@@ -1,0 +1,28 @@
+body {
+  margin-top: -10px;
+}
+
+img {
+  height: 250px;
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+#poster {
+  width: 60%;
+  margin: 0 300px;
+  text-align: center;
+}
+
+#input_text {
+  margin-top: 200px;
+  margin-left: 200px;
+  height: 30px;
+  width: 60%;
+  font-size: 15px;
+}
+
+#input_buttom {
+  height: 35px;
+  width: 60px;
+}

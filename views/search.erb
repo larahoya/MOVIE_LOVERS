@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <meta charset="UTF-8">
+  <title>MOVIE LOVERS</title>
+</head>
+<body>
+  <h2 id="selected-year" data-year="<%=  @year %>"> <%=  @year %> </h2>
+  <div id="poster">
+  <% @movies.each do |movie| %>
+      <span> <img id="<%=  movie[:id] %>" onclick="checkYear(<%= movie[:year] %>)" data-year="<%=  movie[:year] %>" src="<%=  movie[:poster] %>"> </span>
+  <% end %> 
+  </div>
+<script type="text/javascript" src="./movie.js"></script>
+</body>
+</html>
