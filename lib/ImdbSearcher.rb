@@ -13,7 +13,8 @@ class ImdbSearcher
                   id: n,
                   title: film_search.movies[n].title,
                   year: film_search.movies[n].year,
-                  poster: film_search.movies[n].poster
+                  poster: film_search.movies[n].poster,
+                  cast_members: film_search.movies[n].cast_members
                 }
       end
       n += 1
@@ -25,17 +26,17 @@ end
 
 class ImdbSearcherFake
 
-  def search_by_word(word)
+  def self.search_by_word(word)
     [
-     {id: 1, title: "Titulo", year: 1991, poster: "./movie.jpg"},
-     {id: 2, title: "Titulo", year: 1992, poster: "./movie.jpg"},
-     {id: 3, title: "Titulo", year: 1993, poster: "./movie.jpg"},
-     {id: 4, title: "Titulo", year: 1994, poster: "./movie.jpg"},
-     {id: 5, title: "Titulo", year: 1995, poster: "./movie.jpg"},
-     {id: 6, title: "Titulo", year: 1996, poster: "./movie.jpg"},
-     {id: 7, title: "Titulo", year: 1997, poster: "./movie.jpg"},
-     {id: 8, title: "Titulo", year: 1998, poster: "./movie.jpg"},
-     {id: 9, title: "Titulo", year: 1999, poster: "./movie.jpg"},
+     {id: 1, title: "Titulo", year: 1991, poster: "./movie.jpg", cast_members: "member1"},
+     {id: 2, title: "Titulo", year: 1992, poster: "./movie.jpg", cast_members: "member2"},
+     {id: 3, title: "Titulo", year: 1993, poster: "./movie.jpg", cast_members: "member3"},
+     {id: 4, title: "Titulo", year: 1994, poster: "./movie.jpg", cast_members: "member4"},
+     {id: 5, title: "Titulo", year: 1995, poster: "./movie.jpg", cast_members: "member5"},
+     {id: 6, title: "Titulo", year: 1996, poster: "./movie.jpg", cast_members: "member6"},
+     {id: 7, title: "Titulo", year: 1997, poster: "./movie.jpg", cast_members: "member7"},
+     {id: 8, title: "Titulo", year: 1998, poster: "./movie.jpg", cast_members: "member8"},
+     {id: 9, title: "Titulo", year: 1999, poster: "./movie.jpg", cast_members: "member9"},
     ]
   end
 

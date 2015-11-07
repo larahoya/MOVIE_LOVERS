@@ -6,12 +6,24 @@
   <title>MOVIE LOVERS</title>
 </head>
 <body>
-  <h2 id="selected-year" data-year="<%=  @year %>"> <%=  @year %> </h2>
-  <div id="poster">
+  
+  <header>
+    <h2 id="answer" data-question="<%=  @question %>" data-year="<%=  @year %>" data-cast="<%=  @cast_member %>"> 
+      <% if @question == "year" %> 
+        Which film was produced on <%=  @year %> ?
+      <% else %> 
+        Which movie has <%=  @cast_member %> on its cast?
+      <% end %> 
+    </h2>
+  </header>
+
+  
+  <div id="posters">
   <% @movies.each do |movie| %>
-      <span> <img id="<%=  movie[:id] %>" onclick="checkYear(<%= movie[:year] %>)" data-year="<%=  movie[:year] %>" src="<%=  movie[:poster] %>"> </span>
+      <span class="poster"> <img id="<%=  movie[:id] %>" onclick="CheckAnswer(this)" data-year="<%=  movie[:year] %>" data-cast="<%=  movie[:cast_members][0] %>" src="<%=  movie[:poster] %>"> </span>
   <% end %> 
   </div>
+
 <script type="text/javascript" src="./movie.js"></script>
 </body>
 </html>

@@ -9,10 +9,13 @@ end
 
 post '/search' do
   word = params[:input_word]
-  search = ImdbSearcher.new.search_by_word(word)
+  search = ImdbSearcher.search_by_word(word)
   new_list = MovieList.new(search)
-  @year = new_list.select_random_film[:year]
+  @question = new_list.select_random_question
   @movies = new_list.movies
+  selected_movie = new_list.select_random_film
+  @year = selected_movie[:year]
+  @cast_member = selected_movie[:cast_members][0]
   
   erb(:search)
 end
